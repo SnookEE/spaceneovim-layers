@@ -7,7 +7,7 @@ SpNMap 'wk', 'window-up', 'wincmd k'
 SpNMap 'wh', 'window-left', 'wincmd h'
 SpNMap 'wl', 'window-right', 'wincmd l'
 SpNMap 'ww', 'window-other', 'wincmd w'
-SpNMap 'wd', 'window-close', 'wincmd c'
+SpNMap 'wd', 'window-close', 'RemapWindowsOnNerdTreeClose'
 
 
 nnoremap <leader>1 :1wincmd w<CR>

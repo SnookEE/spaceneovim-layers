@@ -3,6 +3,7 @@ command! -nargs=0 -bar SpaceNeovimSyncConfiguration call g:SyncConfigurationVerb
 command! -nargs=0 -bar FindNERDTreeFile call s:sync_nerdtree()
 command! -nargs=0 -bar SyncNERDTree call s:sync_nerdtree_cwd()
 command! -nargs=0 -bar SetNERDTreeDoubleClick call s:set_nerdtree_settings()
+command! -nargs=0 -bar RemapWindowsKeysAndNERDTreeToggle call RemapWindowsKeysAndNERDTreeToggle()
 
 function! s:update_spaceneovim_layers()
   " The users home directory.
@@ -37,6 +38,23 @@ function! s:update_spaceneovim_layers()
   else
     echo "This operation is only implemented for Neovim. Please manually perform a git pull in the layers repository!"
   endif
+endfunction
+
+function! RemapWindowsKeysAndNERDTreeToggle()
+    if g:NERDTree.IsOpen()
+        call g:NERDTree.CursorToTreeWin()
+    else
+        let g:lmap.0 = ['1 wincmd w', '1']
+        let g:lmap.1 = ['2 wincmd w', '2']
+        let g:lmap.2 = ['3 wincmd w', '3']
+        let g:lmap.3 = ['4 wincmd w', '4']
+        let g:lmap.4 = ['5 wincmd w', '5']
+        let g:lmap.5 = ['6 wincmd w', '6']
+        let g:lmap.6 = ['7 wincmd w', '7']
+        let g:lmap.7 = ['8 wincmd w', '8']
+        let g:lmap.8 = ['9 wincmd w', '9']
+        call g:NERDTreeCreator.ToggleTabTree("")
+    endif
 endfunction
 
 " Make sure the function isn't redefined while being executed, since we are

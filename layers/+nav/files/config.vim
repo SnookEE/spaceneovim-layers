@@ -16,7 +16,8 @@ if exists('g:gui_oni')
     SpNMap 'fT', 'oni-sidebar-toggle', 'call OniCommand(\"sidebar.toggle\")'
   endif
 else
-  SpNMap 'ft', 'nerdtree-toggle', 'NERDTreeToggle'
+  SpNMap 'ft', 'nerdtree-toggle', 'RemapWindowsKeysAndNERDTreeToggle'
+  SpNMap '0', 'nerdtree-focus', 'RemapWindowsKeysAndNERDTreeToggle'
 endif
 
 let g:lmap.f.e = get(g:lmap.f, 'e', { 'name': 'spaceneovim' })
